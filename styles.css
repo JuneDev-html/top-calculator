@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10rem;
+    margin: 10rem 1rem;
 }
 
 .console {
-    border: solid grey 2px;
+    border: solid #e1e1e1 2px;
     border-radius: 20px;
     width: 300px;
-    height: 450px;
+    height: 500px;
 }
 
 .ui {
@@ -28,5 +28,23 @@
     margin: 1rem;
     border: solid #e1e1e1 2px;
     border-radius: 20px;
-    height: 270px;
+    height: 320px;
+}
+
+.buttons div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons button {
+    flex: 1;
+    margin: 5px;
+    background-color: #f1f1f1;
+    height: 50px;
+    border: none;
+    border-radius: 100px;
+}
+
+#zero {
+    flex: 2.5;
 }
