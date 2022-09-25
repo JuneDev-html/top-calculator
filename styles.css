@@ -1,0 +1,32 @@
+.calcWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem;
+}
+
+.console {
+    border: solid grey 2px;
+    border-radius: 20px;
+    width: 300px;
+    height: 450px;
+}
+
+.ui {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    margin: 1rem;
+    border: solid #e1e1e1 2px;
+    border-radius: 20px;
+    height: 100px;
+}
+
+.buttons {
+    margin: 1rem;
+    border: solid #e1e1e1 2px;
+    border-radius: 20px;
+    height: 270px;
+}
