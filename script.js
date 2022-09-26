@@ -29,3 +29,5 @@ const operate = (numOne, operator, numTwo) => {
     }
 }
 
+console.log(operate(4, '*', 2));
+
