@@ -33,6 +33,7 @@
     align-items: end;
     padding: 1rem 1rem;
     font-size: 36px;
+    word-break: break-all;
 }
 
 .buttons {
@@ -58,6 +59,6 @@
     font-weight: 700px;
 }
 
-#zero {
+button.zero {
     flex: 2.5;
 }

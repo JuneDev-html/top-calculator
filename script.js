@@ -29,5 +29,24 @@ const operate = (numOne, operator, numTwo) => {
     }
 }
 
-console.log(operate(4, '*', 2));
+// ------ ------- BUTTON FUNCTIONS ------ --------\
+
+const numbers = document.querySelectorAll('.num');
+const display = document.querySelector('.display');
+const clear = document.querySelector('.clear');
+let firstValue;
+
+// populate display function
+numbers.forEach((number) => {
+    number.addEventListener('click', (e) => {
+        display.textContent += e.target.textContent;
+        firstValue = display.textContent;
+        console.log(display.textContent);
+    });
+});
+
+clear.addEventListener('click', () => {
+    display.textContent = '';
+});
+
 
