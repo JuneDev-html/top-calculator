@@ -67,8 +67,28 @@
     border: none;
     border-radius: 100px;
     font-weight: 700px;
+    transition: 0.4s;
 }
 
 button.zero {
     flex: 2.5;
+}
+
+.operator:hover {
+    background-color: rgb(255, 85, 0);
+    cursor: pointer;
+}
+
+.equalsButton:hover {
+    background-color: rgb(255, 68, 0);
+    cursor: pointer;
+}
+
+.top:hover {
+    background-color: #b6b6b6;
+    cursor: pointer;
+}
+.num:hover {
+    background-color: rgb(169, 255, 241);
+    cursor: pointer;
 }
