@@ -38,6 +38,8 @@ const clear = document.querySelector('.clear');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equalsButton');
 const allClear = document.querySelector('.ac');
+const decimal = document.querySelector('.decimal');
+const negative = document.querySelector('.negative');
 
 let tempNum;
 let firstValue;
@@ -45,9 +47,10 @@ let currOperator;
 let secondValue;
 let total;
 let addingNums = true;
+let deciClick = false;
+
 
 // populate display function
-
 numbers.forEach((number) => {
     number.addEventListener('click', (e) => {
         // if you werent adding numbers (and it equals false) that means you were just adding an operator
@@ -63,15 +66,30 @@ numbers.forEach((number) => {
         display.textContent += e.target.textContent;
         // then add whatever is in display to a temporary number 
         tempNum = display.textContent;
+        console.log(tempNum);
     });
 });
 
-// clear display function
-clear.addEventListener('click', () => {
-    display.textContent = '';
-    trackerDisplay.textContent = '';
+decimal.addEventListener('click', (e) => {
+    if (!deciClick) {
+        if(!addingNums) {
+            display.textContent = '';
+        }
+        deciClick = true;
+        addingNums = true;
+        display.textContent +=e.target.textContent;
+        tempNum = display.textContent;
+    }
 });
 
+// Clear Button function
+clear.addEventListener('click', () => {
+    display.textContent = '';
+    // trackerDisplay.textContent = '';
+    deciClick = false;
+});
+
+// Clear All Button function
 allClear.addEventListener('click', () => {
     display.textContent = '';
     firstValue = '';
@@ -81,6 +99,7 @@ allClear.addEventListener('click', () => {
     tempNum = '';
     trackerDisplay.textContent = '';
     addingNums = true;
+    deciClick = false;
 });
 
 
@@ -98,6 +117,7 @@ operators.forEach((operator) => {
             }    
             tempNum = '';
             currOperator = event.target.value;
+            deciClick = false;
             trackerDisplay.textContent = `${firstValue}`;  
         }
         else if (currOperator) {
@@ -106,6 +126,7 @@ operators.forEach((operator) => {
             firstValue = operate(firstValue, currOperator, secondValue);
             currOperator = event.target.value;
             secondValue = '';
+            deciClick = false;
             trackerDisplay.textContent = ` ${firstValue}`;  
         }
         
@@ -113,6 +134,7 @@ operators.forEach((operator) => {
     })
 });
 
+// function for Equal Button 
 equals.addEventListener('click', (event) => {
     if (firstValue) {
         addingNums = false; // turn addingNum "light switch" off to signal you are no longer adding numbers to display
@@ -124,9 +146,16 @@ equals.addEventListener('click', (event) => {
         display.textContent = total;
         currOperator = '';
         secondValue = '';
+        deciClick = false;
         console.log(`total: ${total} currOperator: ${currOperator}`);  
     }
-})
+});
+
+negative.addEventListener('click', () => {
+    display.textContent = display.textContent * -1;
+    tempNum = display.textContent;
+});
+
 
 
 

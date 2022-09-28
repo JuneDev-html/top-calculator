@@ -45,6 +45,7 @@
 .mainDisplay {
     font-size: 36px;
     word-break: break-all;
+    height: 53px;
 }
 
 .buttons {
@@ -80,7 +81,7 @@ button.zero {
 }
 
 .equalsButton:hover {
-    background-color: rgb(255, 68, 0);
+    background-color: rgb(255, 85, 0);
     cursor: pointer;
 }
 
@@ -91,4 +92,26 @@ button.zero {
 .num:hover {
     background-color: rgb(169, 255, 241);
     cursor: pointer;
+}
+
+.decimal:hover {
+    background-color: rgb(169, 255, 241);
+    cursor: pointer;
+}
+
+footer {
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gitLogo {
+    margin-left: 8px;
+    
+}
+
+.gitLogo:hover {
+    scale: 1.2;
 }
