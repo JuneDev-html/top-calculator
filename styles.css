@@ -29,16 +29,26 @@
     height: 80px;
     background-color: white;
     display: flex;
-    justify-content: right;
+    flex-direction: column;
+    justify-content: end;
     align-items: end;
     padding: 1rem 1rem;
+}
+
+.trackerDisplay {
+    font-size: 14px;
+    word-break: break-all;
+    margin-bottom: 20px;
+    color: orangered;
+}
+
+.mainDisplay {
     font-size: 36px;
     word-break: break-all;
 }
 
 .buttons {
     margin: 1rem;
-    
     border-radius: 20px;
     height: 320px;
     background-color: white;

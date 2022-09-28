@@ -32,11 +32,13 @@ const operate = (numOne, operator, numTwo) => {
 // ------ ------- BUTTON FUNCTIONS ------ --------\
 
 const numbers = document.querySelectorAll('.num');
-const display = document.querySelector('.display');
+const display = document.querySelector('.mainDisplay');
+const trackerDisplay = document.querySelector('.trackerDisplay');
 const clear = document.querySelector('.clear');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('.equalsButton');
 const allClear = document.querySelector('.ac');
+
 let tempNum;
 let firstValue;
 let currOperator;
@@ -67,6 +69,7 @@ numbers.forEach((number) => {
 // clear display function
 clear.addEventListener('click', () => {
     display.textContent = '';
+    trackerDisplay.textContent = '';
 });
 
 allClear.addEventListener('click', () => {
@@ -76,6 +79,7 @@ allClear.addEventListener('click', () => {
     secondValue = '';
     total = '';
     tempNum = '';
+    trackerDisplay.textContent = '';
     addingNums = true;
 });
 
@@ -94,7 +98,7 @@ operators.forEach((operator) => {
             }    
             tempNum = '';
             currOperator = event.target.value;
-            console.log(`No firstValue: ${firstValue} ${currOperator}`);  
+            trackerDisplay.textContent = `${firstValue}`;  
         }
         else if (currOperator) {
             addingNums = false; // turn addingNum "light switch" off to signal you are no longer adding numbers to display
@@ -102,7 +106,7 @@ operators.forEach((operator) => {
             firstValue = operate(firstValue, currOperator, secondValue);
             currOperator = event.target.value;
             secondValue = '';
-            console.log(`if firstValue: ${firstValue} ${currOperator}`);  
+            trackerDisplay.textContent = ` ${firstValue}`;  
         }
         
         // if we have a firstValue, complete first equation with current number as secondValue  
@@ -116,6 +120,7 @@ equals.addEventListener('click', (event) => {
         // store result in firstValue for it to be used in possible proceding operations
         total = operate(firstValue, currOperator, secondValue); 
         // display end value of operation
+        trackerDisplay.textContent = '';
         display.textContent = total;
         currOperator = '';
         secondValue = '';
