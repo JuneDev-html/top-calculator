@@ -2,11 +2,13 @@
     font-family: 'Orbitron', sans-serif;
 }
 
+
 .calcWrapper {
+    margin-top: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10rem 1rem;
+    
 }
 
 .console {
@@ -100,6 +102,7 @@ button.zero {
 }
 
 footer {
+    margin-top: 1rem;
     font-size: 13px;
     font-weight: 700;
     display: flex;
@@ -109,9 +112,10 @@ footer {
 
 .gitLogo {
     margin-left: 8px;
-    
 }
 
 .gitLogo:hover {
     scale: 1.2;
 }
+
+
