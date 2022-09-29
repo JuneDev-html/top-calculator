@@ -59,14 +59,15 @@ numbers.forEach((number) => {
         if (!addingNums) {
             display.textContent = '';
         }
-        // turn addingNum "light switch" on to signal you are currently adding numbers
-        // then it doesnt clear your display with every click
-        addingNums = true;
-        // everytime a number is clicked, add the number to display
-        display.textContent += e.target.textContent;
-        // then add whatever is in display to a temporary number 
-        tempNum = display.textContent;
-        console.log(tempNum);
+        
+            // turn addingNum "light switch" on to signal you are currently adding numbers
+            // then it doesnt clear your display with every click
+            addingNums = true;
+            // everytime a number is clicked, add the number to display
+            display.textContent += e.target.textContent;
+            // then add whatever is in display to a temporary number 
+            tempNum = display.textContent;
+            console.log(tempNum);
     });
 });
 
