@@ -48,6 +48,7 @@ let secondValue;
 let total;
 let addingNums = true;
 let deciClick = false;
+let equalsOn = false;
 
 
 // populate display function
@@ -59,15 +60,21 @@ numbers.forEach((number) => {
         if (!addingNums) {
             display.textContent = '';
         }
-        
-            // turn addingNum "light switch" on to signal you are currently adding numbers
-            // then it doesnt clear your display with every click
-            addingNums = true;
-            // everytime a number is clicked, add the number to display
-            display.textContent += e.target.textContent;
-            // then add whatever is in display to a temporary number 
-            tempNum = display.textContent;
-            console.log(tempNum);
+        if (equalsOn) {
+            firstValue = '';
+            firstValue = '';
+            total = '';
+            tempNum = ''; 
+            equalsOn = false;
+        }
+        // turn addingNum "light switch" on to signal you are currently adding numbers
+        // then it doesnt clear your display with every click
+        addingNums = true;
+        // everytime a number is clicked, add the number to display
+        display.textContent += e.target.textContent;
+        // then add whatever is in display to a temporary number 
+        tempNum = display.textContent;
+        console.log(tempNum);
     });
 });
 
@@ -109,6 +116,9 @@ operators.forEach((operator) => {
     operator.addEventListener('click', (event) => {
         // if we dont already have a firstValue, add current number to firstValue
         if (!currOperator) {
+            if (equalsOn) {
+                equalsOn = false;
+            }
             addingNums = false; // turn addingNum "light switch" off to signal you are no longer adding numbers to display
             if (total) {
                 firstValue = total;
@@ -138,6 +148,7 @@ operators.forEach((operator) => {
 // function for Equal Button 
 equals.addEventListener('click', (event) => {
     if (firstValue) {
+        equalsOn = true;
         addingNums = false; // turn addingNum "light switch" off to signal you are no longer adding numbers to display
         secondValue = tempNum;
         // store result in firstValue for it to be used in possible proceding operations
@@ -145,6 +156,14 @@ equals.addEventListener('click', (event) => {
         // display end value of operation
         trackerDisplay.textContent = '';
         display.textContent = total;
+        // firstValue = '';
+        // firstValue = '';
+    
+    
+        // total = '';
+        // tempNum = '';
+    
+        
         currOperator = '';
         secondValue = '';
         deciClick = false;
