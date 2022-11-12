@@ -48,8 +48,8 @@ let secondValue;
 let total;
 let addingNums = true;
 let deciClick = false;
-let equalsOn = false;
-
+// equalsOn tells calculator whether were starting a new equation or working off of current total after hitting the equals button
+let equalsOn = false; 
 
 // populate display function
 numbers.forEach((number) => {
@@ -61,7 +61,6 @@ numbers.forEach((number) => {
             display.textContent = '';
         }
         if (equalsOn) {
-            firstValue = '';
             firstValue = '';
             total = '';
             tempNum = ''; 
